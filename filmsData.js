@@ -5,7 +5,7 @@ export const films = [
     director: "Christopher Nolan",
     anio_estreno: 2010,
     genero: "Ciencia ficción",
-    img: "https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg"
+    img: "https://es.web.img3.acsta.net/medias/nmedia/18/72/41/74/20198901.jpg"
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const films = [
     director: "Francis Ford Coppola",
     anio_estreno: 1972,
     genero: "Crimen",
-    img: "https://m.media-amazon.com/images/I/71x0lCDEgSL._AC_SY679_.jpg"
+    img: "https://es.web.img3.acsta.net/pictures/18/06/12/12/12/0117051.jpg"
   },
   {
     id: 3,
@@ -21,6 +21,6 @@ export const films = [
     director: "Quentin Tarantino",
     anio_estreno: 1994,
     genero: "Drama",
-    img: "https://m.media-amazon.com/images/I/61o-r1J2XrL._AC_SY679_.jpg"
+    img: "https://media.filmelier.com/tit/6894/poster/pulp-fiction-tiempos-violentos_PGhcM1Q.jpeg"
   },
 ];

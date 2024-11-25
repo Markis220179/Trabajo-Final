@@ -16,13 +16,25 @@ app.post('/', (req, res) => {
   res.send('Nueva pelicula agregada')
 })
 
-app.put('/user', (req, res) => {
+app.delete('/film/:id', (req, res) => {
+  const filmId = req.params.id;
+  const inicio = films.findIndex(film => film.id === parseInt(filmId));
+  users.splice(inicio, 1)
+  res.send(`Got a DELETE request at /film ${filmId}`)
+})
+
+app.patch('/film/:id', (req, res) => {
+  const filmId = req.params.id;
+  const updateFilm = req.body;
+  const film = films.find(film => film.id === parseInt(filmId));
+  film.titulo = updateFilm.titulo;
+  film.director = updateFilm.director;
+  film.anio_estreno = updateFilm.anio_estreno;
+  film.genero = updateFilm.genero;
+  film.img = updateFilm.img
   res.send('Got a PUT request at /user')
 })
 
-app.delete('/user', (req, res) => {
-  res.send('Got a DELETE request at /user')
-})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
