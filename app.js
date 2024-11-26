@@ -19,8 +19,8 @@ app.post('/', (req, res) => {
 app.delete('/film/:id', (req, res) => {
   const filmId = req.params.id;
   const inicio = films.findIndex(film => film.id === parseInt(filmId));
-  users.splice(inicio, 1)
-  res.send(`Got a DELETE request at /film ${filmId}`)
+  films.splice(inicio, 1)
+  res.send(`xdf8m ${filmId}`)
 })
 
 app.patch('/film/:id', (req, res) => {
