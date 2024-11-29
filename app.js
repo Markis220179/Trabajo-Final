@@ -6,11 +6,21 @@ const port = 3000
 
 app.use(express.json())
 
-app.get('/', (req, res) => {
+app.get('/films', (req, res) => {
   res.json(films)
 })
 
-app.post('/', (req, res) => {
+app.get('/film/:id', (req, res) => {
+  const filmId = req.params.id;
+  const film = films.find(film => film.id === parseInt(filmId));
+  if (!film) {
+    return res.status(404).send(`La pelicula ${filmId} no fue encontrada`)
+  }
+  console.log(film);
+  res.json(film)
+})
+
+app.post('/film', (req, res) => {
   const newFilm = req.body;
   films.push(newFilm);
   res.send('Nueva pelicula agregada')
@@ -20,7 +30,7 @@ app.delete('/film/:id', (req, res) => {
   const filmId = req.params.id;
   const inicio = films.findIndex(film => film.id === parseInt(filmId));
   films.splice(inicio, 1)
-  res.send(`xdf8m ${filmId}`)
+  res.send(`La pelicula ${filmId} fue eliminada con exito`)
 })
 
 app.patch('/film/:id', (req, res) => {
@@ -32,7 +42,7 @@ app.patch('/film/:id', (req, res) => {
   film.anio_estreno = updateFilm.anio_estreno;
   film.genero = updateFilm.genero;
   film.img = updateFilm.img
-  res.send('Got a PUT request at /user')
+  res.send(`La pelicula ${filmId} fue modificada correctamente`)
 })
 
 
